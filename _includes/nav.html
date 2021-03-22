@@ -97,3 +97,19 @@
     {%- endif -%}
   {%- endfor -%}
 </ul>
+
+<button class="btn js-toggle-dark-mode">Toggle dark mode</button>
+
+<script>
+const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
+
+jtd.addEvent(toggleDarkMode, 'click', function(){
+  if (jtd.getTheme() === 'dark') {
+    jtd.setTheme('light');
+    toggleDarkMode.textContent = 'dark mode';
+  } else {
+    jtd.setTheme('dark');
+    toggleDarkMode.textContent = 'light mode';
+  }
+});
+</script>
